@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: "zsimovanlocker"
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "zsimovanlocker"
+    spec:
+      containers:
+        - name: "zsimovanlocker"
+          image: "zsimovanlockertest.azurecr.io/zsimovanlocker"
+          ports:
+          - containerPort: 5000
